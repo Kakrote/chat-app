@@ -1,15 +1,19 @@
+import { ThemedText } from '@/components/themed-text';
+import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
-import { Text, View } from 'react-native';
-
+import { Text } from 'react-native';
 
 export default function ModalScreen() {
   return (
-    <View className='flex-1 justify-center items-center bg-white dark:bg-gray-900' >
-      <Text className='text-4xl font-bold text-green-500 mb-4'>This is a modal</Text>
+    <ThemedView className='flex-1 justify-center items-center' >
+      <ThemedText type="title" className='text-green-500 mb-4 text-center'>This is a modal</ThemedText>
+      <Text className='text-gray-600 mb-6 text-center px-8'>
+        This modal demonstrates both native components and themed components with NativeWind support!
+      </Text>
       <Link href="/" dismissTo >
-        <Text className='text-blue-500 underline text-lg'>Go to home screen</Text>
+        <ThemedText type="link" className='text-blue-500 underline text-lg'>Go to home screen</ThemedText>
       </Link>
-    </View>
+    </ThemedView>
   );
 }
 
