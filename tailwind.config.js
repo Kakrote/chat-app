@@ -91,6 +91,10 @@ module.exports = {
         'extrabold': '800',
         'black': '900',
       },
+      fontFamily: {
+        'pacifico': ['Pacifico', 'Pacifico-Regular'],
+        'custom': ['Pacifico'],
+      },
     },
   },
   plugins: [],
