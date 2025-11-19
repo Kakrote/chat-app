@@ -10,7 +10,7 @@ interface buttonProps {
     textClassName?: string
     style?: ViewStyle
     textStyle?: TextStyle
-    loading: boolean
+    loading?: boolean
 }
 
 const Button = ({ title, onpress, className, textClassName, style, textStyle, loading = false }: buttonProps) => {

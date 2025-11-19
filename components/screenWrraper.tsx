@@ -9,12 +9,18 @@ type Props={
     gradient?: Pick<LinearGradientProps, 'colors' | 'start' | 'end' | 'locations'>
 }
 
-const ScreenWrraper = ({children,bg,gradient}:Props) => {
+const defaultGradient: Pick<LinearGradientProps, 'colors' | 'start' | 'end'> = {
+    colors: ['#6bc', '#000'],
+    start: { x: 0, y: 0 },
+    end: { x: 2, y: 1 }
+};
+
+const ScreenWrraper = ({children,bg,gradient = defaultGradient}:Props) => {
 
     const {top}=useSafeAreaInsets();
     const paddingTop=top>0?top+5:30;
     
-    if (gradient) {
+    if (gradient && !bg) {
         return (
             <LinearGradient
                 colors={gradient.colors}

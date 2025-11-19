@@ -2,7 +2,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import { Modal, StyleSheet } from 'react-native';
 import "../global.css";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -27,7 +27,10 @@ const Layout = () => {
     return (
        <Stack 
        screenOptions={{
-        headerShown:false
+        headerShown:false,
+        animation:"slide_from_right",
+        animationDuration:300,
+        // presentation:"modal"
        }}
        >
 

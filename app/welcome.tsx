@@ -3,19 +3,23 @@ import ScreenWrraper from '@/components/screenWrraper';
 import { hp, wp } from '@/hooks/dimentions';
 import React from 'react';
 import { Image, StatusBar, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
+import { Colors } from '@/constants/theme';
 
 
 const Welcome = () => {
 
     const onPress = () => {
-        console.log("button bressed")
+        // console.log("button bressed");  // only for the console check
+        router.push('/setCustomName')
     }
+    const router=useRouter()
     return (
 
-        <ScreenWrraper bg="#6bc" gradient={{
-            colors: ['#292929', '#4ade80'],
+        <ScreenWrraper gradient={{
+            colors: ['#6bc', '#000'],
             start: [0, 0],
-            end: [3, 1]
+            end: [2, 1]
         }}>
             <StatusBar barStyle={"light-content"} backgroundColor={"#6bc533"} hidden />
             <View className="flex-1 justify-center items-center px-4">
@@ -30,17 +34,20 @@ const Welcome = () => {
                     }}
                 />
                 <Text
-                    className='text-white font-pacifico text-center p-4'
-                    style={{ fontSize: hp(6) }} // Responsive font size
+                    className=' font-pacifico text-center p-4 w-full '
+                    style={{ fontSize: hp(6), 
+                        color:Colors.dark.primaryDark
+                    }} // Responsive font size
                 >
                     Spy Chat
                 </Text>
                 <View style={{ paddingHorizontal: wp(5), marginTop: hp(3) }}>
                     <Text
-                        className='text-white p-4'
+                        className=' p-4'
                         style={{
                             fontSize: hp(2.5), // Responsive font size
-                            lineHeight: hp(3.5) // Responsive line height
+                            lineHeight: hp(3.5), // Responsive line height
+                            color:Colors.dark.primaryDark
                         }}
                     >
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora obcaecati ab praesentium blanditiis.
@@ -59,6 +66,7 @@ const Welcome = () => {
                     onpress={onPress}
                     textClassName='text-white font-pacifico text-center'
                     textStyle={{ fontSize: hp(3) }} // Responsive text size
+                    loading={false}
                 />
 
             </View>
