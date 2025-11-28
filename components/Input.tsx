@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
 
         padding: wp(2),
         width: wp(50),
+        color:"white",
+        fontSize:hp(1.6)
 
     }
 })
